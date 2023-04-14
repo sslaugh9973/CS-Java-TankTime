@@ -3,8 +3,6 @@ package tankTime;
 import java.util.Scanner;
 
 import misc_util.Misc_Util;
-import misc_util.Misc_Util.*;
-
 public class Game {
 
 	private Tank human;
@@ -19,7 +17,7 @@ public Game(Scanner scan){
     this.scan = scan;
 }
             
-​private void initialize_game(){
+private void initialize_game(){
     this.game_over = false;
     this.distance = Misc_Util.gen_random_int(50, 300);
     System.out.println("The distance between the tanks is" + this.distance + " meters");
@@ -36,41 +34,41 @@ public Game(Scanner scan){
     this.initialize_tanks();
 }
 }  
-​private void initialize_tanks(){
+private void initialize_tanks(){
     initialize_human_tank();
     initialize_computer_tank();
 }
     
-​private void initialize_human_tank() {
+private void initialize_human_tank() {
     System.out.println("Hello Human, enter your name");
     String name = scan.nextLine();
     this.human = new Human_Tank(name, scan);
     System.out.println("welcome," + this.human.getName());
 }
     
-​public void play_game(){
+public void play_game(){
     this.initialize_game();
     while(!this.game_over){
         this.take_turns();
     }
 }
     
-​private void initialize_computer_tank(){
+private void initialize_computer_tank(){
     String name = "Otto";
     this.computer = new Computer_Tank(name);
     System.out.println("welcome" + this.computer.getName());
 }
     
-​private void take_turns() {
+private void take_turns() {
     if(this.turn%2==0){
-        this.take_human_turn(human);
+        this.take_a_turn(human);
     }else {
-        this.take_computer_turn(computer);
+        this.take_a_turn(computer);
     }
     this.turn++;
 }
     
-​private void take_human_turn(){
+private void take_human_turn(){
     double shot = human.fire();
     check_win(shot, human.getName());
 }
@@ -78,12 +76,12 @@ private void take_a_turn(Tank t) {
     double shot = t.fire();
     check_win(shot,t.getName());
 }    
-​private void take_computer_turn(){
+private void take_computer_turn(){
     double shot = computer.fire();
     check_win(shot, computer.getName());
 }
     
-​private void check_win(double shot, String name){
+private void check_win(double shot, String name){
     //the shot is the distance the shot went
     //range is how close the shot has to be to win
 

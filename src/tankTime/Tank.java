@@ -8,8 +8,8 @@ public abstract class Tank implements ITank {
 		this.name = name;
 	}
 	@Override//this is a getter method
-	public String getName(String name) {
-		return name;
+	public String getName() {
+		return this.name;
 	}
 	@Override //this is a setter method
 	public void setAngle(double angle) {

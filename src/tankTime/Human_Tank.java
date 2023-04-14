@@ -15,7 +15,7 @@ public class Human_Tank extends Tank {
     	@Override
         public double fire() {
             double angle = Misc_Util.get_user_input_int(scan, 0, 90, "Enter the angle between 0 and 90 degrees: ");
-            double velocity = Misc_Util.get_user_input_int(scan, 0, 250, "Enter the velocity between 0 and 100: ");
+            double velocity = Misc_Util.get_user_input_int(scan, 0, 250, "Enter the velocity between 0 and 250: ");
             super.setAngle(angle);
             super.setVelocity(velocity);
             double distance = super.calc_distance();

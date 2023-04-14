@@ -1,5 +1,5 @@
 package tankTime;
-import java.util.*;
+
 
 import misc_util.Misc_Util;
 
@@ -12,6 +12,7 @@ public class Computer_Tank extends Tank {
     @Override
     public double fire() {
         double angle = Misc_Util.gen_random_int(0, 89);
+        double velocity = Misc_Util.gen_random_int(0, 250);
         super.setAngle(angle);
         super.setVelocity(velocity);
         double distance = super.calc_distance();
