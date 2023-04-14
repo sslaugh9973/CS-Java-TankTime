@@ -1,6 +1,8 @@
 package tankTime;
 
 import java.util.Scanner;
+
+import misc_util.Misc_Util;
 import misc_util.Misc_Util.*;
 
 public class Game {
@@ -9,7 +11,7 @@ public class Game {
     private Tank computer;
     private Scanner scan;
     private boolean game_over;
-    private double distance;​//the distance the tanks are apart
+    private double distance;//the distance the tanks are apart
     private double range;//how close the shot has to be to win
     private int turn;
 
@@ -19,7 +21,7 @@ public Game(Scanner scan){
             
 ​private void initialize_game(){
     this.game_over = false;
-    this.distance = Misc_util.gen_random_int(50, 300);
+    this.distance = Misc_Util.gen_random_int(50, 300);
     System.out.println("The distance between the tanks is" + this.distance + " meters");
     System.out.println("What difficulty would you like to play on? Easy, Medium, Hard");
     String difficulty = scan.nextLine();
@@ -43,7 +45,7 @@ public Game(Scanner scan){
     System.out.println("Hello Human, enter your name");
     String name = scan.nextLine();
     this.human = new Human_Tank(name, scan);
-    System.out.println("welcome," + this.human.getname());
+    System.out.println("welcome," + this.human.getName());
 }
     
 ​public void play_game(){
@@ -56,7 +58,7 @@ public Game(Scanner scan){
 ​private void initialize_computer_tank(){
     String name = "Otto";
     this.computer = new Computer_Tank(name);
-    System.out.prinln("welcome" + this.computer.getName());
+    System.out.println("welcome" + this.computer.getName());
 }
     
 ​private void take_turns() {
@@ -90,7 +92,7 @@ private void take_a_turn(Tank t) {
         System.out.println(name + "won the game");
         this.game_over = true;
     }else {
-        System.out.println(name+'missed');
+        System.out.println(name+"missed");
     }
 }
         
