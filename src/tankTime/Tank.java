@@ -13,7 +13,7 @@ public abstract class Tank implements ITank {
 	}
 	@Override //this is a setter method
 	public void setAngle(double angle) {
-		if(angle > 0 && angle < 90) {
+		if(angle >= 0 && angle <= 90) {
 			this.angle = angle;
 		}else {
 			this.angle = 0;
@@ -23,9 +23,10 @@ public abstract class Tank implements ITank {
 	public void setVelocity(double velocity) {
 		if(velocity <0) {
 			velocity = 0;
-		}
-		this.velocity = velocity;
+		}else {
+			this.velocity = velocity;
 	}
+	}	
 	@Override
 	public double calc_distance() {
 		double theta = Math.toRadians(angle);

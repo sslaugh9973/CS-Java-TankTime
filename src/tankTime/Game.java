@@ -29,10 +29,11 @@ private void initialize_game(){
         this.range = 10;
     }else if(difficulty.equalsIgnoreCase("hard")){
         this.range = 5;
+    }
     this.range= 10;
     this.turn = 0;
     this.initialize_tanks();
-}
+
 }  
 private void initialize_tanks(){
     initialize_human_tank();
